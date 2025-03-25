@@ -16,7 +16,7 @@ app.use(cors());
 const mailerService = 'gmail';
 const mailerAuth = {
   user: 'yeou914@gmail.com',
-  pass: 'xmww rgyx nbit cdhe'
+  pass: 'xozz nwda nulu gadk'
 };
 
 const nodemailer = require('nodemailer');
