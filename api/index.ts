@@ -64,7 +64,8 @@ app.post('/postOrder', async (req, res) => {
   try {
     await mailer.sendMail(mailOptions);
     res.json({ status: 200 });
-  } catch (Exception) {
+  } catch (error) {
+    console.log(error)
     res.json({ status: 500 });
   };
 });
