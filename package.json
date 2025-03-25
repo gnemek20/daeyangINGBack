@@ -1,0 +1,14 @@
+{
+  "name": "daeyangingback",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.0",
+    "vercel": "^41.4.1"
+  }
+}
