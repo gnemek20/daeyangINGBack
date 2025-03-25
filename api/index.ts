@@ -35,14 +35,14 @@ app.post('/postOrder', async (req, res) => {
   const { name, contact, types, title, content, files } = req.body;
 
   interface fileType {
-    name: string
+    filename: string
     path: string
   };
 
   let fileList: Array<fileType> = [];
   files && files.map((file) => {
     fileList.push({
-      name: file.name,
+      filename: file.name,
       path: file.path
     });
   });
