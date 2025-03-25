@@ -27,11 +27,11 @@ const mailer = nodemailer.createTransport({
 
 // get 메소드
 app.get('/', (req, res) => {
-  res.send('DaeyangING의 서버');
+  res.send('DaeyangING 서버');
 });
 
 // post 메소드
-app.post('/postRequest', async (req, res) => {
+app.post('/postOrder', async (req, res) => {
   const { name, contact, types, title, content, files } = req.body;
 
   type fileType = {
