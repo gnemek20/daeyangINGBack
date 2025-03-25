@@ -20,7 +20,7 @@ const mailerAuth = {
 };
 
 const nodemailer = require('nodemailer');
-const mailer = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   service: mailerService,
   auth: mailerAuth
 });
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 app.post('/postOrder', async (req, res) => {
   const { name, contact, types, title, content, files } = req.body;
 
-  type fileType = {
+  interface fileType {
     name: string
     path: string
   };
@@ -53,16 +53,17 @@ app.post('/postOrder', async (req, res) => {
     subject: `[대양ING] ${title}`,
     html: `
       <p>성함: ${name}</p>
-      <p>종류: ${types ? types : '미기재'}</p>
+      <p>종류: ${types.length !== 0 ? types : '미기재'}</p>
       <p>연락처: ${contact}</p>
-      <br />
+      <p>--------</p>
       <p>${content && content.replace(/\n/g, '<br />')}</p>
+      <p>--------</p>
     `,
     attachments: fileList
   };
 
   try {
-    await mailer.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);
     res.json({ status: 200 });
   } catch (error) {
     console.log(error)
