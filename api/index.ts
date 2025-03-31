@@ -15,8 +15,8 @@ app.use(cors());
 // mailer 설정
 const mailerService = 'gmail';
 const mailerAuth = {
-  user: 'yeou914@gmail.com',
-  pass: 'xozz nwda nulu gadk'
+  user: 'daeyangingreply@gmail.com',
+  pass: 'busg xhdd xdoy zzkp'
 };
 
 const nodemailer = require('nodemailer');
