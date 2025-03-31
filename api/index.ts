@@ -47,9 +47,10 @@ app.post('/postOrder', async (req, res) => {
     });
   });
 
+  const whereToSend = 'yeou914@gmail.com';
   const mailOptions = {
     from: mailerAuth.user,
-    to: mailerAuth.user,
+    to: whereToSend,
     subject: `[대양ING] ${title}`,
     html: `
       <p>성함: ${name}</p>
